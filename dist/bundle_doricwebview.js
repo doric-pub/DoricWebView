@@ -41,10 +41,6 @@ __decorate([
 __decorate([
     doric.Property,
     __metadata("design:type", Boolean)
-], WebView.prototype, "allowFileAccess", void 0);
-__decorate([
-    doric.Property,
-    __metadata("design:type", Boolean)
 ], WebView.prototype, "allowJavaScript", void 0);
 function webView(config) {
     const ret = new WebView();

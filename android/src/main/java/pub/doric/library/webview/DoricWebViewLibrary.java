@@ -21,6 +21,6 @@ public class DoricWebViewLibrary extends DoricLibrary {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        registry.registerViewNode(DoricWebNode.class);
+        registry.registerViewNode(DoricWebViewNode.class);
     }
 }

@@ -6,14 +6,6 @@ export class WebView extends View {
   @Property
   content?: string;
   /**
-   * Enables or disables file access within WebView.
-   * File access is disabled by default.
-   * Note that this enables or disables file system access only.
-   * Assets and resources are still accessible using file:///android_asset and file:///android_res.
-   */
-  @Property
-  allowFileAccess?: boolean;
-  /**
    * Tells WebView to enable JavaScript execution. The default is true.
    */
   @Property

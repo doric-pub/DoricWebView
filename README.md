@@ -1,2 +1,2 @@
 # DoricWebView
-Doric plugins for webview
+Doric webview plugin to load web content.

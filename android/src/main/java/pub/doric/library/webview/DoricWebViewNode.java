@@ -1,6 +1,7 @@
 package pub.doric.library.webview;
 
 import android.annotation.SuppressLint;
+import android.net.Uri;
 import android.os.Build;
 import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
@@ -26,13 +27,13 @@ import pub.doric.shader.ViewNode;
  * @CreateDate: 2021/9/29
  */
 @DoricPlugin(name = "WebView")
-public class DoricWebNode extends ViewNode<WebView> {
+public class DoricWebViewNode extends ViewNode<WebView> {
 
     private final WebChromeClient webChromeClient = new WebChromeClient();
 
     private final WebViewClient webViewClient = new WebViewClient();
 
-    public DoricWebNode(DoricContext doricContext) {
+    public DoricWebViewNode(DoricContext doricContext) {
         super(doricContext);
     }
 
@@ -87,20 +88,24 @@ public class DoricWebNode extends ViewNode<WebView> {
         switch (name) {
             case "url":
                 if (prop.isString()) {
+                    Uri uri = Uri.parse(prop.asString().value());
+                    if (uri.getScheme().equals("file")) {
+                        WebSettings settings = view.getSettings();
+                        settings.setAllowFileAccess(true);
+                        settings.setAllowFileAccessFromFileURLs(true);
+                        settings.setAllowUniversalAccessFromFileURLs(true);
+                    } else {
+                        WebSettings settings = view.getSettings();
+                        settings.setAllowFileAccess(false);
+                        settings.setAllowFileAccessFromFileURLs(false);
+                        settings.setAllowUniversalAccessFromFileURLs(false);
+                    }
                     view.loadUrl(prop.asString().value());
                 }
                 break;
             case "content":
                 if (prop.isString()) {
                     view.loadData(prop.asString().value(), "text/html", "UTF-8");
-                }
-                break;
-            case "allowFileAccess":
-                if (prop.isBoolean()) {
-                    WebSettings settings = view.getSettings();
-                    settings.setAllowFileAccess(prop.asBoolean().value());
-                    settings.setAllowFileAccessFromFileURLs(prop.asBoolean().value());
-                    settings.setAllowUniversalAccessFromFileURLs(prop.asBoolean().value());
                 }
                 break;
             case "allowJavaScript":
