@@ -1,15 +1,16 @@
 Pod::Spec.new do |s|
     s.name             = 'DoricWebView'
     s.version          = '0.1.0'
-    s.summary          = 'Doric extension library'
+    s.summary          = 'Doric extension library for webview'
   
-    #s.description      = <<-DESC
-    #                         DESC
+    s.description      = <<-DESC
+    Doric webview plugin to load web content.
+                            DESC
 
-    s.homepage         = 'http://xxx'
+    s.homepage         = 'https://github.com/doric-pub/DoricWebView/'
     s.license          = { :type => 'Apache-2.0', :file => 'LICENSE' }
-    s.author           = { 'xxx' => 'xxx@xxx' }
-    s.source           = { :git => 'git@xxx', :tag => s.version.to_s }
+    s.author           = { 'pengfei.zhou' => 'pengfeizhou@foxmail.com' }
+    s.source           = { :git => 'https://github.com/doric-pub/DoricWebView.git', :tag => s.version.to_s }
   
     s.ios.deployment_target = '9.0'
   
