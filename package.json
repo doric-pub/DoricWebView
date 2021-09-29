@@ -1,5 +1,5 @@
 {
-  "name": "doricwebview",
+  "name": "doric-webview",
   "version": "0.1.0",
   "main": "dist/bundle_doricwebview.js",
   "scripts": {
@@ -12,8 +12,8 @@
   },
   "license": "Apache-2.0",
   "dependencies": {
-    "doric": ">=0.7.1",
-    "doric-cli": ">=0.7.1",
+    "doric": ">=0.9.0",
+    "doric-cli": ">=0.9.0",
     "reflect-metadata": "^0.1.13",
     "rollup": "^2.24.0",
     "typescript": "^4.2.2"

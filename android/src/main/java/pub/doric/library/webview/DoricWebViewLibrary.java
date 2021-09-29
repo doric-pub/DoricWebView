@@ -1,4 +1,4 @@
-package pub.doric.library;
+package pub.doric.library.webview;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -17,10 +17,10 @@ public class DoricWebViewLibrary extends DoricLibrary {
             byte[] bytes = new byte[is.available()];
             is.read(bytes);
             String content = new String(bytes);
-            registry.registerJSBundle("doricwebview", content);
+            registry.registerJSBundle("doric-webview", content);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        registry.registerNativePlugin(DoricDemoPlugin.class);
+        registry.registerViewNode(DoricWebNode.class);
     }
 }

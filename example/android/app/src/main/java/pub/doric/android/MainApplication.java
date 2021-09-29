@@ -3,7 +3,7 @@ package pub.doric.android;
 import android.app.Application;
 
 import pub.doric.Doric;
-import pub.doric.library.DoricWebViewLibrary;
+import pub.doric.library.webview.DoricWebViewLibrary;
 
 public class MainApplication extends Application {
     @Override
