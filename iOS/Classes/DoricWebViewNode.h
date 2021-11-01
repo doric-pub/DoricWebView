@@ -2,5 +2,12 @@
 #import <DoricCore/Doric.h>
 #import <WebKit/WebKit.h>
 
-@interface DoricWebViewNode : DoricViewNode<WKWebView *>
+@interface DoricWebView : WKWebView
+
+@property (nonatomic, assign) CGFloat contentFitHeight;
+
+@end
+
+@interface DoricWebViewNode : DoricViewNode<DoricWebView *> <WKNavigationDelegate>
+
 @end
