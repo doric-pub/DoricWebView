@@ -25,7 +25,4 @@
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^8.4.0"
   },
-  "optionalDependencies": {
-    "ios-deploy": "^1.11.4"
-  }
 }
