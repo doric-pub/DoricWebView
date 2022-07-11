@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name             = 'DoricWebView'
-    s.version          = '0.1.5'
+    s.version          = '0.1.6'
     s.summary          = 'Doric extension library for webview'
   
     s.description      = <<-DESC
